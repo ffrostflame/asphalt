@@ -190,7 +190,7 @@ async fn main() {
         .await
         .expect("can't write lockfile");
 
-    let lua_filename = format!("{}.lua", output_name);
+    let lua_filename = format!("{}.luau", output_name);
     let lua_output = generate_lua(&new_lockfile, asset_directory_path_str);
 
     fs::write(Path::new(&args.write_dir).join(lua_filename), lua_output)
